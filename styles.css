@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #315382;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 10%;
+    background: rgba(101, 134, 205, 0.2);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 0.9375rem;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #a2da47;
+    transform: scale(1.1);
+    outline: none;
+}
+
+/* Add focus styles for accessibility */
+nav ul li a:focus {
+    outline: 2px dashed #27ab8c;
+    outline-offset: 4px;
+}
+
+/* Buttons */
+.get-started, .watch-video {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.get-started {
+    background-color: #00b4d8;
+    color: white;
+    border-radius: 25px;
+}
+
+.get-started:hover {
+    background-color: #0284c7;
+    transform: translateY(-3px);
+}
+
+.watch-video {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin-left: 0.625rem;
+}
+
+.watch-video:hover {
+    background-color: white;
+    color: #1e385b;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 6.25rem 10%;
+}
+
+.hero-text {
+    max-width: 37.5rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 1.125rem;
+    margin: 0.9375rem 0;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-image img {
+        max-width: 80%;
+        margin-top: 1.25rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
